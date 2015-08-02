@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>My Blog Title</title>
+ <link href="http://cguru.net/atom.xml" rel="self"/>
+ <link href="http://cguru.net/"/>
+ <updated>2015-08-02T13:26:42+08:00</updated>
+ <id>http://cguru.net/</id>
+ <author>
+   <name>Klaus Ma</name>
+   <email>klaus@cguru.net</email>
+ </author>
+
+ 
+
+</feed>
