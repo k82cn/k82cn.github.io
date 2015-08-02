@@ -1,7 +1,6 @@
 ---
 layout: default
 title: About
-catagory: about
 ---
 
 ## Da (Klaus) Ma
