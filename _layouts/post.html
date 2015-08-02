@@ -1,29 +1,35 @@
 ---
 layout: default
 ---
-{% if page.date %}<div class="postdate">Posted on {{ page.date | date_to_string }}{% if page.last_updated %}, last updated on {{ page.last_updated | date_to_string }}{% endif %}</div>{% endif %}
 
-{% if page.superseded %}
-  {% for post in site.posts %}
-    {% if page.superseded == post.url %}
-      <div class="superseded">
-        This guide has been superseded by <a href="{{ post.url }}">{{ post.title }}</a>
-      </div>
-    {% endif %}
-  {% endfor %}
-{% endif %}
+<h1> {{ page.title }} </h1>
 
-<div class="post">
+<p>
+{{ page.date | date_to_string }}, posted by <a href="http://{{ site.domain }}">{{ site.author }}</a> 
+    at <a href="http://{{ site.domain }}{{ page.url }}"> http://{{ site.domain }}{{ page.url }}</a>
+</p>
+
 {{ content }}
-</div>
 
-<div id="related">
-  <h2>Related Posts</h2>
-  <ul class="posts">
-    {% for post in site.related_posts limit:5 %}
-      <li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<br/>
 
+<script type="text/javascript">
+    $(function(){
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
 
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'klaus1982';
+        
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
