@@ -30,7 +30,7 @@ a:hover {
 /** HEADER */
 
 #header {
-    width: 80%;
+    width: 65%;
     height: 60px;
     margin: 0px auto;
 }
@@ -50,7 +50,7 @@ a:hover {
 /** MENU */
 
 #menu {
-    width: 80%;
+    width: 65%;
     height: 1.5em;
     margin: 0px auto;
     border: 1px solid #000099;
@@ -82,7 +82,7 @@ a:hover {
 /** CONTENT */
 
 #content {
-    width: 80%;
+    width: 65%;
     margin: 0px auto;
 }
 
@@ -104,7 +104,7 @@ a:hover {
 
 #footer {
     clear: both;
-    width: 80%;
+    width: 65%;
     margin: 0px auto;
     padding: 5px 10px;
     border: 1px solid #000099;
