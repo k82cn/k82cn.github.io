@@ -32,9 +32,9 @@ __Payoneer 优势：__
 
 万事达汇率查询: [http://www.kuaiyilicai.com/huilv/i-mastercard.html](http://www.kuaiyilicai.com/huilv/i-mastercard.html)
 
-注意：Payoneer 可以推广注册链接，注册成功后，告诉你的朋友注册Payoneer，你的朋友注册成功Payoneer并入账100美元后你和你的朋友的账户都会得到25美元的奖励，记住是推广者和被推广者都会得到25$奖励哦。
+注意：Payoneer 可以推广注册链接，注册成功后，告诉你的朋友注册Payoneer，你的朋友注册成功Payoneer并入账100美元后你和你的朋友的账户都会得到25美元的奖励，__记住是推广者和被推广者都会得到25$奖励哦。__
 
-点击此处注册Payoneer即可得25美元奖励，并可推广获取奖励
+[点击此处注册Payoneer即可得25美元奖励，并可推广获取奖励](http://share.payoneer-affiliates.com/v2/share/6136714947238898543)
 
 Refer your friends to Payoneer and get paid! <br/>
 Earn $25 for each referral* <br/>
