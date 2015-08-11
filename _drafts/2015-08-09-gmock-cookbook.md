@@ -65,96 +65,102 @@ You can mock overloaded functions as usual. No special attention is required:
     };
 
 Note: if you don't mock all versions of the overloaded method, the compiler will give you a warning about some methods in the base class being hidden. To fix that, use using to bring them in scope: 
-class MockFoo : public Foo {
-  ...
-  using Foo::Add;
-  MOCK_METHOD1(Add, int(Element x));
-  // We don't want to mock int Add(int times, Element x);
-  ...
-};
 
-Mocking Class Templates
+    class MockFoo : public Foo {
+      ...
+      using Foo::Add;
+      MOCK_METHOD1(Add, int(Element x));
+      // We don't want to mock int Add(int times, Element x);
+      ...
+    };
+
+### Mocking Class Templates
 
 To mock a class template, append _T to the MOCK_* macros: 
-template <typename Elem>
-class StackInterface {
-  ...
-  // Must be virtual as we'll inherit from StackInterface.
-  virtual ~StackInterface();
 
-  virtual int GetSize() const = 0;
-  virtual void Push(const Elem& x) = 0;
-};
+    template <typename Elem>
+    class StackInterface {
+      ...
+      // Must be virtual as we'll inherit from StackInterface.
+      virtual ~StackInterface();
+    
+      virtual int GetSize() const = 0;
+      virtual void Push(const Elem& x) = 0;
+    };
+    
+    template <typename Elem>
+    class MockStack : public StackInterface<Elem> {
+      ...
+      MOCK_CONST_METHOD0_T(GetSize, int());
+      MOCK_METHOD1_T(Push, void(const Elem& x));
+    };
 
-template <typename Elem>
-class MockStack : public StackInterface<Elem> {
-  ...
-  MOCK_CONST_METHOD0_T(GetSize, int());
-  MOCK_METHOD1_T(Push, void(const Elem& x));
-};
-
-Mocking Nonvirtual Methods
+### Mocking Nonvirtual Methods
 
 Google Mock can mock non-virtual functions to be used in what we call hi-perf dependency injection. 
 
 In this case, instead of sharing a common base class with the real class, your mock class will be unrelated to the real class, but contain methods with the same signatures. The syntax for mocking non-virtual methods is the same as mocking virtual methods: 
-// A simple packet stream class.  None of its members is virtual.
-class ConcretePacketStream {
- public:
-  void AppendPacket(Packet* new_packet);
-  const Packet* GetPacket(size_t packet_number) const;
-  size_t NumberOfPackets() const;
-  ...
-};
 
-// A mock packet stream class.  It inherits from no other, but defines
-// GetPacket() and NumberOfPackets().
-class MockPacketStream {
- public:
-  MOCK_CONST_METHOD1(GetPacket, const Packet*(size_t packet_number));
-  MOCK_CONST_METHOD0(NumberOfPackets, size_t());
-  ...
-};
+    // A simple packet stream class.  None of its members is virtual.
+    class ConcretePacketStream {
+     public:
+      void AppendPacket(Packet* new_packet);
+      const Packet* GetPacket(size_t packet_number) const;
+      size_t NumberOfPackets() const;
+      ...
+    };
+    
+    // A mock packet stream class.  It inherits from no other, but defines
+    // GetPacket() and NumberOfPackets().
+    class MockPacketStream {
+     public:
+      MOCK_CONST_METHOD1(GetPacket, const Packet*(size_t packet_number));
+      MOCK_CONST_METHOD0(NumberOfPackets, size_t());
+      ...
+    };
 
 Note that the mock class doesn't define AppendPacket(), unlike the real class. That's fine as long as the test doesn't need to call it. 
 
 Next, you need a way to say that you want to use ConcretePacketStream in production code, and use MockPacketStream in tests. Since the functions are not virtual and the two classes are unrelated, you must specify your choice at compile time (as opposed to run time). 
 
 One way to do it is to templatize your code that needs to use a packet stream. More specifically, you will give your code a template type argument for the type of the packet stream. In production, you will instantiate your template with ConcretePacketStream as the type argument. In tests, you will instantiate the same template with MockPacketStream. For example, you may write: 
-template <class PacketStream>
-void CreateConnection(PacketStream* stream) { ... }
 
-template <class PacketStream>
-class PacketReader {
- public:
-  void ReadPackets(PacketStream* stream, size_t packet_num);
-};
+    template <class PacketStream>
+    void CreateConnection(PacketStream* stream) { ... }
+    
+    template <class PacketStream>
+    class PacketReader {
+     public:
+      void ReadPackets(PacketStream* stream, size_t packet_num);
+    };
 
 Then you can use CreateConnection<ConcretePacketStream>() and PacketReader<ConcretePacketStream> in production code, and use CreateConnection<MockPacketStream>() and PacketReader<MockPacketStream> in tests. 
-  MockPacketStream mock_stream;
-  EXPECT_CALL(mock_stream, ...)...;
-  .. set more expectations on mock_stream ...
-  PacketReader<MockPacketStream> reader(&mock_stream);
-  ... exercise reader ...
 
-Mocking Free Functions
+    MockPacketStream mock_stream;
+    EXPECT_CALL(mock_stream, ...)...;
+    .. set more expectations on mock_stream ...
+    PacketReader<MockPacketStream> reader(&mock_stream);
+    ... exercise reader ...
+
+### Mocking Free Functions
 
 It's possible to use Google Mock to mock a free function (i.e. a C-style function or a static method). You just need to rewrite your code to use an interface (abstract class). 
 
 Instead of calling a free function (say, OpenFile) directly, introduce an interface for it and have a concrete subclass that calls the free function: 
-class FileInterface {
- public:
-  ...
-  virtual bool Open(const char* path, const char* mode) = 0;
-};
 
-class File : public FileInterface {
- public:
-  ...
-  virtual bool Open(const char* path, const char* mode) {
-    return OpenFile(path, mode);
-  }
-};
+    class FileInterface {
+     public:
+      ...
+      virtual bool Open(const char* path, const char* mode) = 0;
+    };
+    
+    class File : public FileInterface {
+     public:
+      ...
+      virtual bool Open(const char* path, const char* mode) {
+        return OpenFile(path, mode);
+      }
+    };
 
 Your code should talk to FileInterface to open a file. Now it's easy to mock out the function. 
 
@@ -165,72 +171,78 @@ If you are concerned about the performance overhead incurred by virtual function
 The Nice, the Strict, and the Naggy
 
 If a mock method has no EXPECT_CALL spec but is called, Google Mock will print a warning about the "uninteresting call". The rationale is: 
-•New methods may be added to an interface after a test is written. We shouldn't fail a test just because a method it doesn't know about is called. 
-•However, this may also mean there's a bug in the test, so Google Mock shouldn't be silent either. If the user believes these calls are harmless, he can add an EXPECT_CALL() to suppress the warning. 
+* New methods may be added to an interface after a test is written. We shouldn't fail a test just because a method it doesn't know about is called. 
+* However, this may also mean there's a bug in the test, so Google Mock shouldn't be silent either. If the user believes these calls are harmless, he can add an EXPECT_CALL() to suppress the warning. 
 
 However, sometimes you may want to suppress all "uninteresting call" warnings, while sometimes you may want the opposite, i.e. to treat all of them as errors. Google Mock lets you make the decision on a per-mock-object basis. 
 
 Suppose your test uses a mock class MockFoo: 
-TEST(...) {
-  MockFoo mock_foo;
-  EXPECT_CALL(mock_foo, DoThis());
-  ... code that uses mock_foo ...
-}
+
+    TEST(...) {
+      MockFoo mock_foo;
+      EXPECT_CALL(mock_foo, DoThis());
+      ... code that uses mock_foo ...
+    }
 
 If a method of mock_foo other than DoThis() is called, it will be reported by Google Mock as a warning. However, if you rewrite your test to use NiceMock<MockFoo> instead, the warning will be gone, resulting in a cleaner test output: 
 using ::testing::NiceMock;
 
-TEST(...) {
-  NiceMock<MockFoo> mock_foo;
-  EXPECT_CALL(mock_foo, DoThis());
-  ... code that uses mock_foo ...
-}
+    TEST(...) {
+      NiceMock<MockFoo> mock_foo;
+      EXPECT_CALL(mock_foo, DoThis());
+      ... code that uses mock_foo ...
+    }
 
 NiceMock<MockFoo> is a subclass of MockFoo, so it can be used wherever MockFoo is accepted. 
 
 It also works if MockFoo's constructor takes some arguments, as NiceMock<MockFoo> "inherits" MockFoo's constructors: 
-using ::testing::NiceMock;
 
-TEST(...) {
-  NiceMock<MockFoo> mock_foo(5, "hi");  // Calls MockFoo(5, "hi").
-  EXPECT_CALL(mock_foo, DoThis());
-  ... code that uses mock_foo ...
-}
+    using ::testing::NiceMock;
+    
+    TEST(...) {
+      NiceMock<MockFoo> mock_foo(5, "hi");  // Calls MockFoo(5, "hi").
+      EXPECT_CALL(mock_foo, DoThis());
+      ... code that uses mock_foo ...
+    }
 
 The usage of StrictMock is similar, except that it makes all uninteresting calls failures: 
-using ::testing::StrictMock;
 
-TEST(...) {
-  StrictMock<MockFoo> mock_foo;
-  EXPECT_CALL(mock_foo, DoThis());
-  ... code that uses mock_foo ...
-
-  // The test will fail if a method of mock_foo other than DoThis()
-  // is called.
-}
+    using ::testing::StrictMock;
+    
+    TEST(...) {
+      StrictMock<MockFoo> mock_foo;
+      EXPECT_CALL(mock_foo, DoThis());
+      ... code that uses mock_foo ...
+    
+      // The test will fail if a method of mock_foo other than DoThis()
+      // is called.
+    }
 
 There are some caveats though (I don't like them just as much as the next guy, but sadly they are side effects of C++'s limitations): 
-1.NiceMock<MockFoo> and StrictMock<MockFoo> only work for mock methods defined using the MOCK_METHOD* family of macros directly in the MockFoo class. If a mock method is defined in a base class of MockFoo, the "nice" or "strict" modifier may not affect it, depending on the compiler. In particular, nesting NiceMock and StrictMock (e.g. NiceMock<StrictMock<MockFoo> >) is not supported. 
-2.The constructors of the base mock (MockFoo) cannot have arguments passed by non-const reference, which happens to be banned by the Google C++ style guide. 
-3.During the constructor or destructor of MockFoo, the mock object is not nice or strict. This may cause surprises if the constructor or destructor calls a mock method on this object. (This behavior, however, is consistent with C++'s general rule: if a constructor or destructor calls a virtual method of this object, that method is treated as non-virtual. In other words, to the base class's constructor or destructor, this object behaves like an instance of the base class, not the derived class. This rule is required for safety. Otherwise a base constructor may use members of a derived class before they are initialized, or a base destructor may use members of a derived class after they have been destroyed.) 
+
+1. NiceMock<MockFoo> and StrictMock<MockFoo> only work for mock methods defined using the MOCK_METHOD* family of macros directly in the MockFoo class. If a mock method is defined in a base class of MockFoo, the "nice" or "strict" modifier may not affect it, depending on the compiler. In particular, nesting NiceMock and StrictMock (e.g. NiceMock<StrictMock<MockFoo> >) is not supported. 
+2. The constructors of the base mock (MockFoo) cannot have arguments passed by non-const reference, which happens to be banned by the Google C++ style guide. 
+3. During the constructor or destructor of MockFoo, the mock object is not nice or strict. This may cause surprises if the constructor or destructor calls a mock method on this object. (This behavior, however, is consistent with C++'s general rule: if a constructor or destructor calls a virtual method of this object, that method is treated as non-virtual. In other words, to the base class's constructor or destructor, this object behaves like an instance of the base class, not the derived class. This rule is required for safety. Otherwise a base constructor may use members of a derived class before they are initialized, or a base destructor may use members of a derived class after they have been destroyed.) 
 
 Finally, you should be very cautious about when to use naggy or strict mocks, as they tend to make tests more brittle and harder to maintain. When you refactor your code without changing its externally visible behavior, ideally you should't need to update any tests. If your code interacts with a naggy mock, however, you may start to get spammed with warnings as the result of your change. Worse, if your code interacts with a strict mock, your tests may start to fail and you'll be forced to fix them. Our general recommendation is to use nice mocks (not yet the default) most of the time, use naggy mocks (the current default) when developing or debugging tests, and use strict mocks only as the last resort. 
 
-Simplifying the Interface without Breaking Existing Code
+### Simplifying the Interface without Breaking Existing Code
 
 Sometimes a method has a long list of arguments that is mostly uninteresting. For example, 
-class LogSink {
- public:
-  ...
-  virtual void send(LogSeverity severity, const char* full_filename,
-                    const char* base_filename, int line,
-                    const struct tm* tm_time,
-                    const char* message, size_t message_len) = 0;
-};
+
+    class LogSink {
+     public:
+      ...
+      virtual void send(LogSeverity severity, const char* full_filename,
+                        const char* base_filename, int line,
+                        const struct tm* tm_time,
+                        const char* message, size_t message_len) = 0;
+    };
 
 This method's argument list is lengthy and hard to work with (let's say that the message argument is not even 0-terminated). If we mock it as is, using the mock will be awkward. If, however, we try to simplify this interface, we'll need to fix all clients depending on it, which is often infeasible. 
 
 The trick is to re-dispatch the method in the mock class: 
+
 class ScopedMockLog : public LogSink {
  public:
   ...
@@ -2516,21 +2528,5 @@ Teaching Google Mock How to Print Your Values
 When an uninteresting or unexpected call occurs, Google Mock prints the argument values and the stack trace to help you debug. Assertion macros like EXPECT_THAT and EXPECT_EQ also print the values in question when the assertion fails. Google Mock and Google Test do this using Google Test's user-extensible value printer. 
 
 This printer knows how to print built-in C++ types, native arrays, STL containers, and any type that supports the << operator. For other types, it prints the raw bytes in the value and hopes that you the user can figure it out. Google Test's advanced guide explains how to extend the printer to do a better job at printing your particular type than to dump the bytes. 
- 
-
-
-     
-     
-
-Terms - Privacy - Project Hosting Help 
-
-Powered by Google Project Hosting 
-
-
-
-
-
-
-
 
 
