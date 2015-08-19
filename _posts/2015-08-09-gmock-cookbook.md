@@ -468,7 +468,7 @@ or tell the mock object that you don't want to mock Concrete():
 
 ## Using Matchers
 
-Matching Argument Values Exactly
+### Matching Argument Values Exactly
 
 You can specify exactly which arguments a mock method is expecting: 
 
@@ -766,7 +766,7 @@ matches a plain pointer p where p->number >= 3. If p is NULL, the match will alw
 
 What if you want to validate more than one members at the same time? Remember that there is AllOf(). 
 
-## Validating the Value Pointed to by a Pointer Argument
+### Validating the Value Pointed to by a Pointer Argument
 
 C++ functions often take pointers as arguments. You can use matchers like IsNull(), NotNull(), and other comparison matchers to match a pointer, but what if you want to make sure the value pointed to by the pointer, instead of the pointer itself, has a certain property? Well, you can use the Pointee(m) matcher. 
 
