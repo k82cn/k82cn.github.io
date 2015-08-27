@@ -1,6 +1,6 @@
 ---
 layout: default
-title: HowTo in CGURU
+title: HowTo ... ...
 ---
 
 ## How to contribute
