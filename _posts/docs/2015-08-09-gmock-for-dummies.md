@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: docs
 title: Google C++ Mocking Framework for Dummies 
 ---
 

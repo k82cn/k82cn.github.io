@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: blogs
 title: Git tips -- overwrite local changes forcefully
 ---
 

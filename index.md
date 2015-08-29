@@ -1,27 +1,52 @@
 ---
 layout: default
-catagory: blog
-description: a list of Klaus's blogs
 ---
 
-  <ul>
-    {% for post in site.posts %}
-      <li style="margin:5px 5px 5px 5px;">
-        <span style="width:100px;display:-moz-inline-box;display:inline-block;">{{ post.date | date_to_string }}</span> - 
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+<h2><a href="{{ site.url }}/news">News</a></h2>
 
-<!--
-<div id="pages">
-  <h2>Pages</h2>
-  <ul>
-    {% for page in site.html_pages %}
-      {% if page.title %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
--->
+<ul>
+  {% for post in site.categories.news limit: 5 %}
+    <li style="margin:5px 5px 5px 5px;">
+      <span style="width:90px;display:-moz-inline-box;display:inline-block;">{{ post.date | date_to_string }}</span>
+      <span style="width:10px;display:-moz-inline-box;display:inline-block;">-</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2><a href="{{ site.url }}/tech">Tech</a></h2>
+
+<ul>
+  {% for post in site.categories.tech limit: 5 %}
+    <li style="margin:5px 5px 5px 5px;">
+      <span style="width:90px;display:-moz-inline-box;display:inline-block;">{{ post.date | date_to_string }}</span>
+      <span style="width:10px;display:-moz-inline-box;display:inline-block;">-</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2><a href="{{ site.url }}/blogs">Blogs</a></h2>
+
+<ul>
+  {% for post in site.categories.blogs limit: 5 %}
+    <li style="margin:5px 5px 5px 5px;">
+      <span style="width:90px;display:-moz-inline-box;display:inline-block;">{{ post.date | date_to_string }}</span>
+      <span style="width:10px;display:-moz-inline-box;display:inline-block;">-</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2><a href="{{ site.url }}/docs">Docs</a></h2>
+
+<ul>
+  {% for post in site.categories.docs limit: 5%}
+    <li style="margin:5px 5px 5px 5px;">
+      <span style="width:90px;display:-moz-inline-box;display:inline-block;">{{ post.date | date_to_string }}</span>
+      <span style="width:10px;display:-moz-inline-box;display:inline-block;">-</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+

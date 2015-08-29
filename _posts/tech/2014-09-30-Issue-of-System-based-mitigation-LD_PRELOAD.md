@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: tech
 title: Issue of “System-based mitigation - LD_PRELOAD”
 ---
 

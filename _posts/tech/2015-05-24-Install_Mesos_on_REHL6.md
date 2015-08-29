@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: tech
 title: Mesos (1) -- Install Mesos on RHEL6
 ---
 

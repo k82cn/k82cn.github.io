@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: tech
 title: 475D – CGCDSSQ (Time limit exceeded on test 9)
 ---
 

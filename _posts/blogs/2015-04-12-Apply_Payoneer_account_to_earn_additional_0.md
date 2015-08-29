@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: blogs
 title: Apply Payoneer account to earn additional $10
 ---
 

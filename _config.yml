@@ -9,16 +9,5 @@ title: CGURU.NET
 author: Klaus Ma
 email: klaus@cguru.net
 
-# configuration for ehancements, uncomment to enable
+permalink:    pretty 
 
-# feedburner:
-#   id: feedburnerid
-
-# google_analytics:
-#   account: UA-XXXXX-X
-
-# github:
-#   username: ghusername
-
-# disqus:
-#   id: disqusid

@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: tech
 title: Include shared_ptr for C++ and C++11
 ---
 

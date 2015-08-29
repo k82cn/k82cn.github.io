@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: tech
 title: Mesos Tips
 ---
 
