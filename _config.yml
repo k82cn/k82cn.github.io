@@ -4,10 +4,10 @@ exclude: ['Rakefile', 'README.md', 'config.rb']
 
 # configuration required for some pages
 
-domain: cguru.net
-title: CGURU.NET
+domain: i.k82.me
+title: K82
 author: Klaus Ma
-email: klaus@cguru.net
+email: klaus1982.cn@gmail.com
 
 permalink:    pretty 
 
