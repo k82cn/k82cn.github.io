@@ -5,7 +5,7 @@ exclude: ['Rakefile', 'README.md', 'config.rb']
 # configuration required for some pages
 
 domain: i.k82.me
-title: K82
+title: Klaus's Blog
 author: Klaus Ma
 email: klaus1982.cn@gmail.com
 
