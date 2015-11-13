@@ -3,7 +3,7 @@
 
 body {
     text-align: justify;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: arial,sans-serif;
     color: #333333;
     background-image: url("/images/background.png");
 }
