@@ -12,10 +12,4 @@ layout: default
 
 {% endfor %}
 
-<script type="text/javascript">
-  $(function(){
-    $("pre").addClass("prettyprint");
-    prettyPrint();
-  });
-</script>
 
