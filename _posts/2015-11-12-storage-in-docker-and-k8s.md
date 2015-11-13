@@ -20,7 +20,9 @@ The above picture show the overall architecture of Docker volume plugin. The doc
 
 ## Kubernetes Volume
 
-Ongoing
+![Kubernetes Volume](/images/KubernetesVolume.png)
+
+In Kubernetes, kubelet takes the responsibility to mount distributed FS into local FS; it also maintenance the mapping and sent the local mout point when create/start container by Docker API.
 
 ## Kubernetes Persistent Volumes and Claims
 
