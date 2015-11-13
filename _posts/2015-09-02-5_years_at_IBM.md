@@ -1,6 +1,6 @@
 ---
 layout: post
-categories: blogs
+categories: top
 title: China-Service Recognition achievement at IBM
 ---
 
