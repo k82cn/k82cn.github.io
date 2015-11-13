@@ -5,6 +5,7 @@ body {
     text-align: justify;
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #333333;
+    background-image: url("/images/background.png");
 }
 
 h1, h2, h3 {
