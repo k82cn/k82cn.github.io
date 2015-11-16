@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: tech
-title: Mesos (1) -- Install Mesos on RHEL6
+title: Mesos (1)&#58; Install Mesos on RHEL6
 ---
 
 ## Install dependencies:
