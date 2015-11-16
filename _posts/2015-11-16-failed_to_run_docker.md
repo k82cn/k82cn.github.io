@@ -1,6 +1,7 @@
 ---
 layout: post
-title: [Docker Error] failed to add interface veth0f084cf to sandbox
+categories: tech
+title: Docker Error -- failed to add interface veth0f084cf to sandbox
 ---
 
 ## Error Message:
