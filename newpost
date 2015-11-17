@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+function usage()
+{
+
+    echo ""
+    echo "   Usage: newpost -t title -u url -c category"
+    echo ""
+    echo ""
+
+    exit 1;
+}
+
+while getopts "u:t:c" arg
+do
+    case $arg in
+        u) url=$OPTARG ;;
+        t) title=$OPTARG ;;
+        c) category=$OPTARG ;;
+        ?) usage ;;
+    esac
+done
+
+if [ -z $url ]
+then
+    usage
+fi
+
+cat > _posts/$(date "+%Y-%m-%d")-$url.md << EOF
+---
+layout: post
+title: $title
+categories: $category
+---
+EOF
