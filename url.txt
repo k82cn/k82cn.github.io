@@ -1,0 +1,6 @@
+---
+layout: nil
+---
+{% for page in site.posts %}
+http://{{ site.domain }}{{ page.url }}
+{% endfor %}
