@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="baidu-site-verification" content="cred9QWvHP" />
-<title>{{ site.title }} </title>
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="/css/styles.css" rel="stylesheet" type="text/css" />
