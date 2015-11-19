@@ -87,6 +87,13 @@ a:hover {
     margin: 0px auto;
 }
 
+#content img {
+    max-width:100%; 
+    max-height:100%;
+    margin:auto;
+    display:block;
+}
+
 #content h2 {
     font-weight: normal;
 }
