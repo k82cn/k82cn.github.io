@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hyper&#58; Kubernetes/Docker Network
-categories: 
+categories: tech
 ---
 
 
