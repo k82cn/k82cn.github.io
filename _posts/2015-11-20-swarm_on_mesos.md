@@ -4,7 +4,7 @@ title: Hyper&#58; Swarm on Mesos
 categories: tech
 ---
 
-![Swarm on Mesos](/images/SwarmOnMesos.tif)
+![Swarm on Mesos](/images/SwarmOnMesos.png)
 
 ## Solution & Estimations:
 Current solution is to 1.) let Swarm launch tasks by Mesos 2.) for the other API, let Swarm send request to docker engine directly (red arrow)
