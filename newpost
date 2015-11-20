@@ -11,7 +11,7 @@ function usage()
     exit 1;
 }
 
-while getopts "u:t:c" arg
+while getopts "u:t:c:" arg
 do
     case $arg in
         u) url=$OPTARG ;;
@@ -25,6 +25,17 @@ if [ -z $url ]
 then
     usage
 fi
+
+if [ -z $title ]
+then
+    usage
+fi
+
+if [ -z $category ]
+then
+    usage
+fi
+
 
 cat > _posts/$(date "+%Y-%m-%d")-$url.md << EOF
 ---
