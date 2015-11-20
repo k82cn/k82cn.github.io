@@ -6,7 +6,7 @@ categories: tech
 
 ## Named namespaces in Google Code Style
 
-1. Namespaces wrap the entire source file after includes, gflags definitions/declarations and forward declarations of classes from other namespaces.
+Namespaces wrap the entire source file after includes, gflags definitions/declarations and forward declarations of classes from other namespaces.
 
     // In the .h file
     namespace mynamespace {
@@ -32,7 +32,7 @@ categories: tech
     }  // namespace mynamespace
 
 
-1. More complex .cc files might have additional details, like flags or using-declarations.
+More complex .cc files might have additional details, like flags or using-declarations.
 
 
     #include "a.h"
@@ -48,23 +48,23 @@ categories: tech
      }  // namespace a
 
 
-1. Do not declare anything in namespace std, including forward declarations of standard library classes. Declaring entities in namespace std is undefined behavior, i.e., not portable. To declare entities from the standard library, include the appropriate header file.
+Do not declare anything in namespace std, including forward declarations of standard library classes. Declaring entities in namespace std is undefined behavior, i.e., not portable. To declare entities from the standard library, include the appropriate header file.
 
-1. You may not use a using-directive to make all names from a namespace available.
+You may not use a using-directive to make all names from a namespace available.
 
     // Forbidden -- This pollutes the namespace.
     using namespace foo;
 
-1. You may use a using-declaration anywhere in a .cc file (including in the global namespace), and in functions, methods, classes, or within internal namespaces in .h files.
+You may use a using-declaration anywhere in a .cc file (including in the global namespace), and in functions, methods, classes, or within internal namespaces in .h files.
 
-1. Do not use using-declarations in .h files except in explicitly marked internal-only namespaces, because anything imported into a namespace in a .h file becomes part of the public API exported by that file.
+Do not use using-declarations in .h files except in explicitly marked internal-only namespaces, because anything imported into a namespace in a .h file becomes part of the public API exported by that file.
 
     // OK in .cc files.
     // Must be in a function, method, internal namespace, or
     // class in .h files.
     using ::foo::bar;
 
-1. Namespace aliases are allowed anywhere where a using-declaration is allowed. In particular, namespace aliases should not be used at namespace scope in .h files except in explicitly marked internal-only namespaces.
+Namespace aliases are allowed anywhere where a using-declaration is allowed. In particular, namespace aliases should not be used at namespace scope in .h files except in explicitly marked internal-only namespaces.
 
 
     // Shorten access to some commonly used names in .cc files.
@@ -84,7 +84,7 @@ categories: tech
     }  // namespace librarian
 
 
-1. Do not use inline namespaces.
+Do not use inline namespaces.
 
 ## Namespace discussion in Mesos
 
