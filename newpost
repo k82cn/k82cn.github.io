@@ -26,12 +26,12 @@ then
     usage
 fi
 
-if [ -z $title ]
+if [ -z "$title" ]
 then
     usage
 fi
 
-if [ -z $category ]
+if [ -z "$category" ]
 then
     usage
 fi
