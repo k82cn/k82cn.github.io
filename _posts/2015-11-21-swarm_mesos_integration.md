@@ -31,7 +31,7 @@ Both Swarm manager & Mesos Slave will communicate with docker daemon: Swarm acce
 
 Each node in your swarm must run a Mesos slave. The slave must be capable of starting tasks in a Docker Container using the `--containerizers=docker` option. For example:
 
-    mesos-slave --containerizers=docker,mesos --master=zk://zknode:2181/mesos --isolation=cgroups --resources="cpus:16;mem:24576;disk:409600;ports:[10000-90000]" 
+    mesos-slave --containerizers=docker,mesos --master=zk://zknode:2181/mesos --isolation=cgroups
 
 
 ## Swarm Manager
