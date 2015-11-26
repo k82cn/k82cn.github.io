@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: blogs
-title: Git tips -- overwrite local changes forcefully
+title: Git Tips&#58; overwrite local changes forcefully
 ---
 
     git fetch origin
