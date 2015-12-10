@@ -4,9 +4,9 @@ title: GreenVPN Email and Address
 categories: blogs
 ---
 
-## How to get GreenVPN's address
+## How to get GreenVPN address
 
-    GreenDizhi@gmail.com
+[GreenDizhi@gmail.com](mailto:GreenDizhi@gmail.com)
 
 ## My reference in GreenVPN
 
