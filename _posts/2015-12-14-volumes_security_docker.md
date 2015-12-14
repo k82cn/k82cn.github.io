@@ -12,7 +12,7 @@ The following command mounts volumes from host with uid/gid:
 
 `-u=10:10` set uid/euid/gid/egid in docker to `10`, it overwrites `USER` configuration in `Dockerfile`. If using `-u=10`, the gid/egid will be 0. When using distributed file system (POSIX), e.g. NFS, it also follows this practice.
 
-Here's the summary of the test cases:
+## Test cases & result
 
 **Case 1: Create file on NFS and mount to Docker**
 
