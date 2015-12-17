@@ -6,7 +6,15 @@ categories: tech
 
 ## Description: 
 
-The target of this JIRA is to offer the allocation slack resources to the framework.
+The target of this JIRA is to offer the allocation slack resources to the framework. Here're the key points of this design:
+
+- It's different with oversubscription: oversubscription "dynamic adjust resources", make cluster has more resources (revocable); but Optimistic Offer lends reserved resources to other framework (did not increase the total resources i cluster).
+- For allocation slack resources, it should NOT included in Quota.
+- After Quota, `remainClusterResource.contains` should NOT account ALLOCATION_SLACK; for example, if 40 CPU in remainClusterResources, in one slave, 30 CPU is "unreserved + reserved" and 20 CPU is ALLOCATION_SLACK, master should offer those resources to the framework.
+- In DRF, should ALLOCATION_SLACK account into the sorter?
+- Currently, allocator assign all ALLOCATION_SLACK resources to the first framework; it should also be re-visit in MESOS-3765 (Make offer size adjustable (granularity)).
+- I'm also thinkging to add a sorter for allocation slack after DRF; but it seems overkilled.
+
 
 ## JIRAs of Design
 
