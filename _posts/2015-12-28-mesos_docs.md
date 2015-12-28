@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mesos#&58; Design Documents of Mesos
+title: Mesos&#58; Design Documents of Mesos
 categories: tech
 ---
 
