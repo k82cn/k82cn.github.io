@@ -3,7 +3,8 @@ layout: default
 ---
 
 {% for post in site.categories.top %}
-#[{{ post.title }}]({{ post.url }})
+
+<h1>[{{ post.title }}]({{ post.url }})</h1>
 
 {{ post.content }}
 
@@ -13,7 +14,8 @@ layout: default
 
 
 {% for post in site.categories.tech limit:3 %}
-#[{{ post.title }}]({{ post.url }})
+
+<h1>[{{ post.title }}]({{ post.url }})</h1>
 
 {{ post.content }}
 
