@@ -4,7 +4,7 @@ layout: default
 
 {% for post in site.categories.top %}
 
-<h1>[{{ post.title }}]({{ post.url }})</h1>
+# [{{ post.title }}]({{ post.url }})
 
 {{ post.content }}
 
