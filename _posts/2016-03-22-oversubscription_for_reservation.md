@@ -1,0 +1,106 @@
+---
+layout: post
+title: [WIP] Mesos&#58; Oversubscription for Reservation
+categories: tech
+---
+
+## Allocation in allocator:
+
+**Option 1: Manage revocable resources in a separate sorter (the value of revocable resources is different with regular resources)**
+
+In this option, the value of revocable is considered to be different with regular resources. A new resources pool (revocableRoleSorter) is introduced to manage/allocate revocable resources. The revocable resources pool will come after DRF as stage 3 in allocator; it uses the same logic with DRF to handle revocable resources. Here's the logic 
+
+1. Stage 2 (DRF), only allocate non-revocable resources
+1. The revocableRoleSorter.total include both usage_slack and allocation_slack
+1. The total revocable resources is calculated in `::allocate()`; because the idle reserved resources maybe changed after stage 2 (wDRF).
+1. Add counter for revocable resources; it need to trace allocation in stage 3
+
+
+```
+// Calculate the total revocable resources in allocator. The idle reserved resources maybe 
+// changed in stage 2 (wDRF).
+foreach slaves {
+  revocableRoleSorter->update(slaveId, idle reserved + totalOversubscription);
+  slave[slaveId].totalRevocable = idle reserved + totalOversubscription;
+}
+
+// Allocate revocable resources based on sorters.
+foreach slaves {
+  foreach revocableRoleSorter->sort() {
+    foreach revocableFrameworksSorter[role]->sort() {
+      available = totalRevocable - allocatedRevocable;
+
+      if (isFilter() || !allocatable(available))
+        continue;
+
+      slave[slaveId].allocatedRevocable += available;
+      offerable[frameworkId] += available;
+
+      revocableRoleSorter->allocated(...);
+
+      revocableFrameworkSorter->add(...);
+      revocableFrameworkSorter->allocated(...);
+    }
+  }
+}
+```
+
+In `revocableResources`, the allocation of revocableRoleSorter is also updated to release resources.
+
+
+```
+  revocableFrameworkSorters[role]->unallocated(...);
+  revocableFrameworkSorters[role]->remove(...);
+  revocableRoleSorter->unallocated(...);
+```
+
+
+**Option 2: Manage revocable resources together with regular resources in role/framework sorter (the revocable resources means the same value as regular resources)**
+
+
+
+> Klaus: Prefer to #1; allocator handles revocable resources separately, "Revocable by default" JIRA will only update the logic/code on revocable resources stage. But if introduced stage 3 for revocable resources, the performance of allocator maybe impacted. It need a benchmark for this option.
+
+
+## Rescind Offer
+
+After offering idle reserved resources to framework, those idle reserved resources maybe allocated to its owner; there's two options for us to handle this case:
+
+**Option 1: Rescind revocable offers in allocator**
+
+Update allocator interfaces for rescind offer:
+
+```
+class Allocator {
+  rescindOffer();
+};
+```
+
+How to do that in allocator? 
+
+1. identify the resources that should be rescinded
+2. send resources to master
+3. in maser, try to rescind offers for resources; but how to handle race condition?
+    1. call resolveConflict before launching tasks??
+    1. ignore race condition; let agent correct it??
+
+
+**Option 2: Evict executors until launching tasks in agent**
+
+
+
+## Eviction
+
+To resolve the conflict , there are several options to us:
+
+
+**Option 1: Agent calculates how many resources to evict, chooses which executor to evict and then does eviction**
+
+
+**Option 2: Master calculates how many resources to evict; Agent chooses which executor to evict and does eviction**
+
+
+**Option 3: Master calculates how many resources to evict and chooses which executor to evict, Agent does eviction**
+
+
+
