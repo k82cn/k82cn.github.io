@@ -4,9 +4,24 @@ title: Mesos&#58; Oversubscription for Reservation
 categories: tech
 ---
 
+## Background
+
+Resources can be reserved by frameworks in a variety of ways, including:
+
+* Static reservations
+* Dynamic reservations via Offer::Operations
+* Dynamic reservations via HTTP endpoints
+* Quotas (None-Goal)
+
+Reserved resources allow frameworks and cluster operators to ensure sufficient resources are available when needed.  Reservations are usually made to guarantee there are enough resources under peak loads. Often times, reserved resources are not actually allocated; in other words, the frameworks do not use those resources and they sit reserved, but idle.
+
+This underutilization is either an opportunity cost or a direct cost, particularly to the cluster operator.  Reserved but unallocated resources held by a Lender Framework could be optimistically offered to other frameworks, which we refer to as Tenant Frameworks.  When the resources are requested back by the Lender Framework, some of the Tenant Framework-s tasks are evicted and the original resource offer guarantee is preserved.
+
+The first step is to identify when resources are reserved, but not allocated.  We then offer these reserved resources to other frameworks, but mark these offered resources as revocable resources.  This allows Tenant Frameworks to use these resources temporarily in a 'best-effort' fashion, knowing that they could be revoked or reclaimed at any time.
+
 ## Allocation in allocator:
 
-**Option 1: Manage revocable resources in a separate sorter (the value of revocable resources is different with regular resources)**
+### Option 1: Manage revocable resources in a separate sorter (the value of revocable resources is different with regular resources)
 
 In this option, the value of revocable is considered to be different with regular resources. A new resources pool (revocableRoleSorter) is introduced to manage/allocate revocable resources. The revocable resources pool will come after DRF as stage 3 in allocator; it uses the same logic with DRF to handle revocable resources. Here's the logic 
 
@@ -55,24 +70,37 @@ In `revocableResources`, the allocation of revocableRoleSorter is also updated t
 ```
 
 
-**Option 2: Manage revocable resources together with regular resources in role/framework sorter (the revocable resources means the same value as regular resources)**
+### Option 2: Manage revocable resources together with regular resources in role/framework sorter (the revocable resources means the same value as regular resources)
 
 
 
-> Klaus: Prefer to #1; allocator handles revocable resources separately, "Revocable by default" JIRA will only update the logic/code on revocable resources stage. But if introduced stage 3 for revocable resources, the performance of allocator maybe impacted. It need a benchmark for this option.
+Prefer to #1; allocator handles revocable resources separately, "Revocable by default" JIRA will only update the logic/code on revocable resources stage. But if introduced stage 3 for revocable resources, the performance of allocator maybe impacted. It need a benchmark for this option.
 
 
 ## Rescind Offer
 
 After offering idle reserved resources to framework, those idle reserved resources maybe allocated to its owner; there's two options for us to handle this case:
 
-**Option 1: Rescind revocable offers in allocator**
+### Option 1: Rescind revocable offers in allocator
 
 Update allocator interfaces for rescind offer:
 
 ```
 class Allocator {
-  rescindOffer();
+  void initialize(
+      const Duration& allocationInterval,
+      const lambda::function<
+          void(const FrameworkID&,
+               const hashmap<SlaveID, Resources>&)>& offerCallback,
+      const lambda::function<
+          void(const FrameworkID&,
+               const hashmap<SlaveID, UnavailableResources>&)>&
+        inverseOfferCallback,
+      // The callback for allocator to rescind resources.
+      const lambda::function<
+          void(const FrameworkID&,
+               const hashmap<SlaveID, Resources>&)>& rescindOfferCallback,
+      const hashmap<std::string, double>& weights);       
 };
 ```
 
@@ -85,7 +113,7 @@ How to do that in allocator?
     1. ignore race condition; let agent correct it??
 
 
-**Option 2: Evict executors until launching tasks in agent**
+### Option 2: Evict executors until launching tasks in agent
 
 
 
@@ -94,13 +122,13 @@ How to do that in allocator?
 To resolve the conflict , there are several options to us:
 
 
-**Option 1: Agent calculates how many resources to evict, chooses which executor to evict and then does eviction**
+### Option 1: Agent calculates how many resources to evict, chooses which executor to evict and then does eviction
 
 
-**Option 2: Master calculates how many resources to evict; Agent chooses which executor to evict and does eviction**
+### Option 2: Master calculates how many resources to evict; Agent chooses which executor to evict and does eviction
 
 
-**Option 3: Master calculates how many resources to evict and chooses which executor to evict, Agent does eviction**
+### Option 3: Master calculates how many resources to evict and chooses which executor to evict, Agent does eviction
 
 
 
