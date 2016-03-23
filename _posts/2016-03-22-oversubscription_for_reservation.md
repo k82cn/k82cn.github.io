@@ -19,7 +19,7 @@ This underutilization is either an opportunity cost or a direct cost, particular
 
 The first step is to identify when resources are reserved, but not allocated.  We then offer these reserved resources to other frameworks, but mark these offered resources as revocable resources.  This allows Tenant Frameworks to use these resources temporarily in a 'best-effort' fashion, knowing that they could be revoked or reclaimed at any time.
 
-## Allocation in allocator:
+## Allocation
 
 ### Option 1: Manage revocable resources in a separate sorter (the value of revocable resources is different with regular resources)
 
@@ -64,26 +64,38 @@ In `revocableResources`, the allocation of revocableRoleSorter is also updated t
 
 
 ```
-  revocableFrameworkSorters[role]->unallocated(...);
-  revocableFrameworkSorters[role]->remove(...);
-  revocableRoleSorter->unallocated(...);
+revocableFrameworkSorters[role]->unallocated(...);
+revocableFrameworkSorters[role]->remove(...);
+revocableRoleSorter->unallocated(...);
 ```
-
 
 ### Option 2: Manage revocable resources together with regular resources in role/framework sorter (the revocable resources means the same value as regular resources)
 
-
+Refer to the allocator part in https://docs.google.com/document/d/1RGrkDNnfyjpOQVxk_kUFJCalNMqnFlzaMRww7j7HSKU/edit
 
 Prefer to #1; allocator handles revocable resources separately, "Revocable by default" JIRA will only update the logic/code on revocable resources stage. But if introduced stage 3 for revocable resources, the performance of allocator maybe impacted. It need a benchmark for this option.
 
 
 ## Rescind Offer
 
-After offering idle reserved resources to framework, those idle reserved resources maybe allocated to its owner; there's two options for us to handle this case:
+After offering idle reserved resources as revocable resources to the framework, those idle reserved resources maybe allocated to its owner; there's two options for us to handle this case:
 
 ### Option 1: Rescind revocable offers in allocator
 
-Update allocator interfaces for rescind offer:
+If the total revocable resources is less than allocated revocable resources in allocator, the allocator will call rescindOfferCallback to ask master to rescind offers. A new counter is introduced in allocator to trace rescinding resources, it is upated when master recovery resources.
+
+In master, there's 
+- how about the used resources?
+
+1. identify the resources that should be rescinded
+2. send resources to master; when?
+3. in maser, try to rescind offers for resources; but how to handle race condition?
+    1. call resolveConflict before launching tasks??
+    1. ignore race condition; let agent correct it??
+
+
+
+Update allocator interfaces for rescind offer as follow:
 
 ```
 class Allocator {
@@ -104,13 +116,6 @@ class Allocator {
 };
 ```
 
-How to do that in allocator? 
-
-1. identify the resources that should be rescinded
-2. send resources to master
-3. in maser, try to rescind offers for resources; but how to handle race condition?
-    1. call resolveConflict before launching tasks??
-    1. ignore race condition; let agent correct it??
 
 
 ### Option 2: Evict executors until launching tasks in agent
@@ -121,7 +126,6 @@ How to do that in allocator?
 
 To resolve the conflict , there are several options to us:
 
-
 ### Option 1: Agent calculates how many resources to evict, chooses which executor to evict and then does eviction
 
 
@@ -129,6 +133,16 @@ To resolve the conflict , there are several options to us:
 
 
 ### Option 3: Master calculates how many resources to evict and chooses which executor to evict, Agent does eviction
+
+
+
+## Feature Interaction
+
+### Dynamic Reservation
+
+### Maintainenance
+
+### Quota
 
 
 
