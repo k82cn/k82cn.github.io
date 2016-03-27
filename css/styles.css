@@ -133,6 +133,14 @@ a:hover {
 	padding: 0px 15px;
 }
 
+#colTwo img {
+  max-width:100%;
+  max-height:100%;
+  margin:auto;
+  display:block;
+  align:left;
+}
+
 #colThree {
 	float: left;
 	width: 180px;
