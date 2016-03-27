@@ -71,7 +71,7 @@ revocableRoleSorter->unallocated(...);
 
 ### Option 2: Manage revocable resources together with regular resources in role/framework sorter (the revocable resources means the same value as regular resources)
 
-Refer to the allocator part in https://docs.google.com/document/d/1RGrkDNnfyjpOQVxk_kUFJCalNMqnFlzaMRww7j7HSKU/edit
+Refer to the allocator part in [Optimistic Offer Phase 1](https://docs.google.com/document/d/1RGrkDNnfyjpOQVxk_kUFJCalNMqnFlzaMRww7j7HSKU/edit)
 
 Prefer to #1; allocator handles revocable resources separately, "Revocable by default" JIRA will only update the logic/code on revocable resources stage. But if introduced stage 3 for revocable resources, the performance of allocator maybe impacted. It need a benchmark for this option.
 
@@ -82,9 +82,20 @@ After offering idle reserved resources as revocable resources to the framework, 
 
 ### Option 1: Rescind revocable offers in allocator
 
-If the total revocable resources is less than allocated revocable resources in allocator, the allocator will call rescindOfferCallback to ask master to rescind offers. A new counter is introduced in allocator to trace rescinding resources, it is upated when master recovery resources.
+If the total revocable resources is less than allocated revocable resources in allocator, the allocator calls __rescindOfferCallback__ to ask master to rescind offers. A new counter is introduced in allocator to trace rescinding resources, it is upated when master recovery resources.
 
-In master, there's 
+In master, there's some race condition between launching task & rescinding offer:
+
+Case 1: 
+    --------- rescindOfferCallBack --------------- launchTask ---------------
+
+
+Case 2:
+    --------- launchTask --------------- rescindOfferCallBack ---------------
+
+Option 1: 
+
+
 - how about the used resources?
 
 1. identify the resources that should be rescinded
@@ -143,6 +154,3 @@ To resolve the conflict , there are several options to us:
 ### Maintainenance
 
 ### Quota
-
-
-

@@ -29,7 +29,26 @@
 </div>
 
 <div id="content">
-  {{ content }}
+	<div id="left">
+    {{ content }}
+	</div>
+
+	<div id="right">
+		<h2>Recent Updates</h2>
+    {% for post in site.categories.tech limit:5 %}
+      <p> # [{{ post.title }}]({{ post.url }}) </p>
+    {% endfor %}
+
+    <!--
+		<h2>Ipsum Dolorem</h2>
+		<ul>
+			<li><a href="#">Sagittis Bibendum Erat</a></li>
+			<li><a href="#">Malesuada Turpis</a></li>
+			<li><a href="#">Quis Gravida Massa</a></li>
+			<li><a href="#">Inerat Viverra Ornare</a></li>
+		</ul>
+    -->
+	</div>
 </div>
 
 <script>
