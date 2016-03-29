@@ -9,3 +9,14 @@ layout: default
 {{ post.content }}
 
 {% endfor %}
+
+<br/>
+<br/>
+
+{% for post in site.categories.tech limit:1 %}
+
+# [{{ post.title }}]({{ post.url }})
+
+{{ post.content }}
+
+{% endfor %}
