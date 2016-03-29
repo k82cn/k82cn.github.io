@@ -50,7 +50,7 @@ a:hover {
 /** MENU */
 
 #menu {
-	width: 700px;
+	width: 800px;
 	height: 1.5em;
 	margin: 0px auto;
 	border: 1px solid #000099;
@@ -82,7 +82,7 @@ a:hover {
 /** CONTENT */
 
 #content {
-	width: 700px;
+	width: 800px;
 	margin: 0px auto;
 }
 
@@ -100,7 +100,7 @@ a:hover {
 
 #left {
 	float: left;
-	width: 480px;
+	width: 580px;
 }
 
 #right {
@@ -112,7 +112,7 @@ a:hover {
 
 #footer {
 	clear: both;
-	width: 680px;
+	width: 780px;
 	margin: 0px auto;
 	padding: 5px 10px;
 	border: 1px solid #000099;
