@@ -4,6 +4,22 @@ title: Mesos&#58; Oversubscription for Reservation
 categories: tech
 ---
 
+## Background
+
+Resources can be reserved by frameworks in a variety of ways, including:
+
+* Static reservations
+* Dynamic reservations via Offer::Operations
+* Dynamic reservations via HTTP endpoints
+* Quotas (None-Goal)
+
+Reserved resources allow frameworks and cluster operators to ensure sufficient resources are available when needed.  Reservations are usually made to guarantee there are enough resources under peak loads. Often times, reserved resources are not actually allocated; in other words, the frameworks do not use those resources and they sit reserved, but idle.
+
+This underutilization is either an opportunity cost or a direct cost, particularly to the cluster operator.  Reserved but unallocated resources held by a Lender Framework could be optimistically offered to other frameworks, which we refer to as Tenant Frameworks.  When the resources are requested back by the Lender Framework, some of the Tenant Framework’s tasks are evicted and the original resource offer guarantee is preserved. 
+
+The first step is to identify when resources are reserved, but not allocated.  We then offer these reserved resources to other frameworks, but mark these offered resources as revocable resources.  This allows Tenant Frameworks to use these resources temporarily in a 'best-effort' fashion, knowing that they could be revoked or reclaimed at any time.
+
+
 ## Allocation
 
 In “Oversubscription for Reservation”, reserved but not allocated resources are offered as revocable  resources. The following options focus on non-throttle revocable resources. The throttleable revocable resources are managed by ResourceEstimator/QoSController. (Add more description here on throttleable)
