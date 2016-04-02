@@ -4,7 +4,8 @@ title: About
 ---
 
 ## Da (Klaus) Ma
-Detail-oriented software professional with 6+ years of experience on BigData & Distributed System, e.g. Hadoop, Spark, Mesos. Skilled at complex project design and escalation handling. Good written and oral communication skills; capable of leading team for projects.
+
+IBM Platform Computing OpenSource Technlogy Center Software Engineer, Mesos/Kubernetes/Docker Contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM. He has been engaged in the relevant work of distributed systems and has a wealth of experience in resource management, resource scheduling and distributed computing.
 
 ## Skills
 
@@ -18,7 +19,7 @@ Distributed System, BigData, PMP (#1684623), C/C++, Java
 * __Software Engineer__: Baidu (2008/06 ~ 2010/08) at Beijing
 
 ## Contacts
-__E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Skype__: klaus1982.cn; __Github__: [@klaus1982](http://www.github.com/klaus1982)
+__E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Skype__: klaus1982.cn; __Github__: [@k82](http://www.github.com/k82)
 
 ## Education
 
@@ -44,12 +45,3 @@ __E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Skype__: 
 
   Although more and more scientists start to take advantages of grid technologies to facilitate their researches, running parallel jobs crossing domains in a grid environment is still a challenge. Even MPICH-G2 is able to run MPI applications on across domain resources, however, the resource allocations are not synchronized which will cause dead lock and other serious problems. In this paper, we introduced a virtual job model (VJM) which achieves synchronized cross-domain resource allocation for parallel grid applications. VJM is able to prevent the resource allocation deadlock caused by multiple parallel jobs competing resource, and alleviate the resource waste by backfilling small jobs. VJM can work with almost all kinds of local schedulers via standard Grid Resource Allocation and Management (GRAM) protocol as it does not depend on resource reservation. We have implemented VJM in meta-scheduler CSF4 and validate the rationality of VJM by mpiBLAST-g2, a parallel bioinformatics application. 
 
-### [__Kubernetes on Mesos (1)__](http://geek.csdn.net/news/detail/60224)
-
-  CSDN
-
-  __Authors__: Da Ma, Guangya Liu
-
-  Kubernetes是一个docker集群管理工具，主要包含资源管理，部署运行，服务发现，扩容缩容等功能，帮助用户把所有的应用都部署在Docker Container里边，Kubernetes可以看成是一个mini的PaaS平台，主要用来帮助用户管理Docker Container。
-
-  Apache Mesos是一款开源集群管理软件，由加州大学伯克利分校的AMPLab首先开发；支持Hadoop、ElasticSearch、Spark、Storm 和Kafka等架构。Mesos 为上层的应用框架提供了资源共享，资源监控，动态扩容等集群管理功能。由于其稳定、通用等特性，越来越受到大型公司的青睐，例如Twitter、Facebook、Apple等都在生产环境中使用Mesos进行集群管理。
