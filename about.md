@@ -19,7 +19,7 @@ Distributed System, BigData, PMP (#1684623), C/C++, Java
 * __Software Engineer__: Baidu (2008/06 ~ 2010/08) at Beijing
 
 ## Contacts
-__E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Skype__: klaus1982.cn; __Github__: [@k82](http://www.github.com/k82)
+__E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Github__: [@k82](http://www.github.com/k82); __Linkedin__: [k82cn](http://cn.linkedin.com/in/k82cn)
 
 ## Education
 
