@@ -5,7 +5,7 @@ title: About
 
 ## Da (Klaus) Ma
 
-IBM Platform Computing OpenSource Technlogy Center Software Engineer, Mesos/Kubernetes/Docker Contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM. He has been engaged in the relevant work of distributed systems and has a wealth of experience in resource management, resource scheduling and distributed computing.
+IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM focus on resource management, resource scheduling in distributed system.
 
 ## Skills
 
