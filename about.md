@@ -7,7 +7,7 @@ IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's 
 
 ## Skills
 
-Distributed System, BigData, PMP (#1684623), C/C++, Java
+Cloud, DCOS, BigData, PMP (#1684623), C/C++, Java, Go
 
 ## Experience
 
