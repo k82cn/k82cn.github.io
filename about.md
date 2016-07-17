@@ -3,8 +3,6 @@ layout: default
 title: About
 ---
 
-## Da (Klaus) Ma
-
 IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM focus on resource management, resource scheduling in distributed system.
 
 ## Skills
@@ -13,13 +11,14 @@ Distributed System, BigData, PMP (#1684623), C/C++, Java
 
 ## Experience
 
-* __Advisory Software Engineer__: Platform Computing, an IBM company (2014/07 ~ Present) at Beijing
+* __Software Architect__: Platform Computing, an IBM company (2016/07 ~ Present) at Beijing
+* __Advisory Software Engineer__: Platform Computing, an IBM company (2014/07 ~ 2016/07) at Beijing
 * __Team Lead of CE__: Platform Computing, an IBM company (2011/11 ~ 2014/06) at Beijing
 * __Software Engineer__: Platform Computing (2010/09 ~ 2011/11) at Beijing
 * __Software Engineer__: Baidu (2008/06 ~ 2010/08) at Beijing
 
 ## Contacts
-__E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Github__: [@k82](http://www.github.com/k82); __Linkedin__: [k82cn](http://cn.linkedin.com/in/k82cn)
+__E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Github__: [@k82cn](http://www.github.com/k82cn); __Linkedin__: [k82cn](http://cn.linkedin.com/in/k82cn)
 
 ## Education
 
