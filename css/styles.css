@@ -18,6 +18,12 @@ ul {
 	list-style-position: inside;
 }
 
+li {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+
 a {
 	color: #000099;
 }
@@ -30,7 +36,7 @@ a:hover {
 /** HEADER */
 
 #header {
-	width: 800px;
+	width: 900px;
 	height: 60px;
 	margin: 0px auto;
 }
@@ -50,7 +56,7 @@ a:hover {
 /** MENU */
 
 #menu {
-	width: 800px;
+	width: 900px;
 	height: 1.5em;
 	margin: 0px auto;
 	border: 1px solid #000099;
@@ -82,7 +88,7 @@ a:hover {
 /** CONTENT */
 
 #content {
-	width: 800px;
+	width: 900px;
 	margin: 0px auto;
 }
 
@@ -112,7 +118,7 @@ a:hover {
 
 #footer {
 	clear: both;
-	width: 780px;
+	width: 880px;
 	margin: 0px auto;
 	padding: 5px 10px;
 	border: 1px solid #000099;
