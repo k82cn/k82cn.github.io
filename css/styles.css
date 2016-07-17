@@ -18,12 +18,6 @@ ul {
 	list-style-position: inside;
 }
 
-li {
-  margin:0;
-  padding:0;
-  list-style-type:none;
-}
-
 a {
 	color: #000099;
 }
