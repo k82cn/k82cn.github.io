@@ -4,8 +4,6 @@ title: Mesos Newbie Quick Start
 categories: tech
 ---
 
-# Newbie Document
-
 ## Introduction
 
 The purpose of this document is to give an introduction and overall description of the contribution process for contributors new to Mesos.  This document is intended to extend the existing documentation with a focus on on-boarding contributors to the community as quickly as possible.
