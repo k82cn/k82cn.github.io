@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM focus on resource management, resource scheduling in distributed system.
+IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
 
 ## Skills
 
