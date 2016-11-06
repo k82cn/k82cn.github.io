@@ -10,6 +10,10 @@ IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's 
 
 Cloud, DCOS, BigData, PMP (#1684623), C/C++, Java, Go
 
+## Achievements
+
+![Euler](https://projecteuler.net/profile/k82cn.png)
+
 ## Experience
 
 * __Software Architect__: Platform Computing, an IBM company (2016/07 ~ Present) at Beijing
