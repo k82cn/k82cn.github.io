@@ -41,6 +41,12 @@ rm -rf vendor
 ./hack/godep-save.sh
 ```
 
+## Verify before commit
+
+```
+make verify
+```
+
 ## Reference
 
 * [End-to-End Testing in Kubernetes](https://github.com/kubernetes/kubernetes/blob/master/docs/devel/e2e-tests.md)
