@@ -44,6 +44,9 @@ rm -rf vendor
 ## Verify before commit
 
 ```
+hack/update-munge-docs.sh
+hack/update-swagger-spec.sh
+hack/update-openapi-spec.sh
 make verify
 ```
 
