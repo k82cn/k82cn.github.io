@@ -1,84 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+    {% include meta.html %}
 
-<link href="/css/styles.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="/css/prettify.css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-<script src="/js/prettify.js"></script>
-<script src="/js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-</head>
-<body>
-<div id="header">
-	<h1>Klaus's Blog</h1>
-	<h2>on Cloud/DCOS</h2>
-</div>
-<div id="menu">
-	<ul>
-		<li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-	</ul>
-</div>
-<div id="content">
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
 
-    {{ content }}
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
 
-<!--
-	<div id="left">
-		<h2>Welcome to Untitled!</h2>
-		<p>SIMPLICITY is a free template from <a href="http://templated.co" rel="nofollow">TEMPLATED</a> released under the <a href="http://templated.co/license">Creative Commons Attribution License</a>. You're free to use it for both commercial or personal use. We only ask that you credit us in some way. Enjoy :)</p>
-		<p>Suspendisse potenti. Donec nulla est, laoreet quis, pellentesque in, congue in, dui. Nunc rhoncus placerat augue. Donec justo odio, eleifend varius, volutpat venenatis, sagittis ut, orci. Donec nulla est, laoreet quis, pellentesque in, congue in, dui. Nunc rhoncus placerat augue. Donec justo odio, eleifend varius, volutpat venenatis, sagittis ut, orci. Nullam et orci in erat viverra ornare. Nunc pellentesque. Sed vestibulum blandit nisl. Quisque elementum convallis purus. Quisque pellentesque semper massa.</p>
-		<ul>
-			<li><a href="#">Suspendisse quis gravida massa felis.</a></li>
-			<li><a href="#">Vivamus sagittis bibendum erat.</a></li>
-			<li><a href="#">Nullam et orci in erat viverra ornare.</a></li>
-			<li><a href="#">Suspendisse quis gravida massa felis.</a></li>
-			<li><a href="#">Curabitur malesuada turpis nec ante.</a></li>
-		</ul>
-		<p>Aliquam gravida massa eu arcu. Fusce mollis tristique sem. Sed eu eros imperdiet eros interdum blandit. Vivamus sagittis bibendum erat. Curabitur malesuada turpis nec ante. Suspendisse quis felis. Suspendisse potenti. Nullam et orci in erat viverra ornare. Nunc pellentesque. Sed vestibulum blandit nisl. Quisque elementum convallis purus.</p>
-	</div>
-	<div id="right">
-		<h2>Recent Updates</h2>
-		<p><strong>[06/09/2006]</strong> Etiam odio mi, suscipit et, rhoncus ac, lacinia, nisl. Aliquam gravida massa eu arcu. <a href="#">More&#8230;</a></p>
-		<p><strong>[06/06/2006]</strong> Fusce mollis tristique sem. Sed eu eros imperdiet eros interdum blandit. Vivamus sagittis bibendum erat. Curabitur malesuada. <a href="#">More&#8230;</a></p>
-		<p><strong>[06/03/2006]</strong> Nunc pellentesque. Sed vestibulum blandit nisl. Quisque elementum convallis purus. Suspendisse potenti. Donec nulla est, laoreet quis, pellentesque in. <a href="#">More&#8230;</a></p>
-		<h2>Ipsum Dolorem</h2>
-		<ul>
-			<li><a href="#">Sagittis Bibendum Erat</a></li>
-			<li><a href="#">Malesuada Turpis</a></li>
-			<li><a href="#">Quis Gravida Massa</a></li>
-			<li><a href="#">Inerat Viverra Ornare</a></li>
-		</ul>
-	</div>
-  -->
-</div>
+          <div class="site-info">
+            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-description">{{ site.description }}</p>
+          </div>
 
-<!--
-<div id="footer">
-	<p>Copyright &copy; Untitled. Designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></p>
-</div>
--->
+          <nav>
+            <a href="{{ site.baseurl }}/">Blog</a>
+            <a href="{{ site.baseurl }}/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
 
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
- })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
 
-ga('create', 'UA-70292147-1', 'auto');
-ga('send', 'pageview');
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
 
-$(function(){
-    $("pre").addClass("prettyprint");
-    prettyPrint();
-    });
-</script>
-
-</body>
+    {% include analytics.html %}
+  </body>
 </html>

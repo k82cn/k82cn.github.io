@@ -53,7 +53,6 @@ R&D of PS department; focus on coverage of spider/crawler.
 
 R&D of IT department; focus on “workload form engine”, “user management system” and so on.
 
-
 ## Contacts
 __E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Github__: [@k82cn](http://www.github.com/k82cn); __Linkedin__: [k82cn](http://cn.linkedin.com/in/k82cn)
 
