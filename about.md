@@ -12,7 +12,7 @@ IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's 
 
 __Open Source Developer of Spectrum Conductor for Container__
 
-Kubernetes contributor: 45 patches in 2 Months; one major proposal:
+Kubernetes contributor: [40+ patches](http://t.cn/RMF2x2B); one major proposal:
   * Run multiple application in k8s [#36716] (proposing to be incubator, prototype at k82cn/kube-arbitrator)
 
 Kube-mesos maintainer: several proposals:
