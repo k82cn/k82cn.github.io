@@ -13,20 +13,23 @@ IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's 
 __Open Source Developer of Spectrum Conductor for Container__
 
 Kubernetes contributor: [40+ patches](http://t.cn/RMF2x2B); one major proposal:
-  * Run multiple application in k8s [#36716] (proposing to be incubator, prototype at k82cn/kube-arbitrator)
+
+* Run multiple application in k8s [#36716] (proposing to be incubator, prototype at k82cn/kube-arbitrator)
 
 Kube-mesos maintainer: several proposals:
-  * Integrate Namespace/Quota with CloudProviders [#31069]
-  * Integrate kube-DNS with external DNS [#28453]
-  * Make k8sm-scheduler using reserved resource firstly [#31068]
-  * Kubernetes use revocable resources from Mesos [#19529]
-  * Refactor k8sm to avoid re-ship binaries [k8sm#20] (on-going)
+
+* Integrate Namespace/Quota with CloudProviders [#31069]
+* Integrate kube-DNS with external DNS [#28453]
+* Make k8sm-scheduler using reserved resource firstly [#31068]
+* Kubernetes use revocable resources from Mesos [#19529]
+* Refactor k8sm to avoid re-ship binaries [k8sm#20] (on-going)
 
 Mesos contributor: 27 patches; several major proposals:
-  * Reusable/Cacheable Offer [MESOS-4811]
-  * Oversubscription for reservation [MESOS-4967] (with prototype)
-  * Manage offers in allocator [MESOS-4553]
-  * Enable `requestResource` for Marathon/Kubernetes
+
+* Reusable/Cacheable Offer [MESOS-4811]
+* Oversubscription for reservation [MESOS-4967] (with prototype)
+* Manage offers in allocator [MESOS-4553]
+* Enable `requestResource` for Marathon/Kubernetes
 
 ### IBM, Beijing, China (2014 ~ 2015)
 
@@ -39,13 +42,14 @@ Lead ~5 size of team on critical customer issues handling, by working with globa
 __Team Lead of Spectrum Symphony CE__
 
 Lead ~10 size of team on agile development for new requirements, by working with global Product manager, to meet business priorities in time; the major requirements includes:
-  * SSM migration
-  * DAG workload for Symphony (research)
-  * Single SIM for Symphony (investigation)
-  * Multiple Tasks in One Service Instance (MTS)
-  * Service Affinity Group (SAG)
-  * Recursive Workload
-  * 20K cores per application (Multiple-SSM)
+
+* SSM migration
+* DAG workload for Symphony (research)
+* Single SIM for Symphony (investigation)
+* Multiple Tasks in One Service Instance (MTS)
+* Service Affinity Group (SAG)
+* Recursive Workload
+* 20K cores per application (Multiple-SSM)
 
 ### Baidu, Beijing, China (2008 ~ 2010)
 
@@ -68,11 +72,11 @@ Major in Computer Science and Technology; Scholarship every year
 
 ## Presentation
 
-  * KubeCon 2016: [Kubernetes on EGO -- Bringing Enterprise Resource Management and Scheduling to Kubernetes](http://sched.co/8K3n)
-  * MesosCon 2016 Asia: [Kubernetes on Mesos: Not Just Another Mesos Framework](http://sched.co/8QFB)
-  * GOPS 2016 Beijing: [Resource Management and Scheduler of PaaS](http://gops2016-beijing.eventdove.com/)
-  * COSC 2016: [Kubernetes on Mesos: The Present and the Future](http://www.huodongxing.com/go/coscon2016)
-  * CSDN 2016: [Round table on micro service in enterprise](http://cctc.csdn.net/m/zone/cctc2016/schedule)
+* KubeCon 2016: [Kubernetes on EGO -- Bringing Enterprise Resource Management and Scheduling to Kubernetes](http://sched.co/8K3n)
+* MesosCon 2016 Asia: [Kubernetes on Mesos: Not Just Another Mesos Framework](http://sched.co/8QFB)
+* GOPS 2016 Beijing: [Resource Management and Scheduler of PaaS](http://gops2016-beijing.eventdove.com/)
+* COSC 2016: [Kubernetes on Mesos: The Present and the Future](http://www.huodongxing.com/go/coscon2016)
+* CSDN 2016: [Round table on micro service in enterprise](http://cctc.csdn.net/m/zone/cctc2016/schedule)
 
 ## Publication
 
