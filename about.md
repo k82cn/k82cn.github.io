@@ -100,16 +100,3 @@ Although more and more scientists start to take advantages of grid technologies 
 
 Kubernetes, Mesos, HPC, PMP (#1684623), C/C++, Java, Golang
 
-## Title
-
-* __Software Architect__: Platform Computing, an IBM company (2016/07 ~ Present) at Beijing
-* __Advisory Software Engineer__: Platform Computing, an IBM company (2014/07 ~ 2016/07) at Beijing
-* __Team Lead of L3__: Platform Computing, an IBM company (2014/07 ~ 2015/07) at Beijing
-* __Team Lead of CE__: Platform Computing, an IBM company (2011/11 ~ 2014/06) at Beijing
-* __Software Engineer__: Platform Computing (2010/09 ~ 2011/11) at Beijing
-* __Software Engineer__: Baidu (2008/06 ~ 2010/08) at Beijing
-
-## Others
-
-![Euler](https://projecteuler.net/profile/k82cn.png)
-
