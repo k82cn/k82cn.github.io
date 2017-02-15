@@ -12,9 +12,9 @@ IBM Software Architect, Mesos/Kubernetes Contributor. Jilin University master's 
 
 __Open Source Developer of Spectrum Conductor for Container__
 
-Kubernetes Member: [40+ patches](http://t.cn/RMF2x2B); one major proposal:
+Kubernetes Member: [several patches](http://t.cn/RMF2x2B); one major proposal:
 
-* Run multiple application in k8s [#36716] (proposing to be incubator, prototype at k82cn/kube-arbitrator)
+* Run multiple application in k8s [#36716](https://github.com/kubernetes/kubernetes/issues/36716) (proposing to be incubator, prototype at k82cn/kube-arbitrator)
 
 Kube-mesos Maintainer: several proposals:
 
@@ -24,7 +24,7 @@ Kube-mesos Maintainer: several proposals:
 * Kubernetes use revocable resources from Mesos [#19529]
 * Refactor k8sm to avoid re-ship binaries [k8sm#20] (on-going)
 
-Mesos Contributor: 27 patches; several major proposals:
+Mesos Contributor: several patches and major proposals:
 
 * Reusable/Cacheable Offer [MESOS-4811]
 * Oversubscription for reservation [MESOS-4967] (with prototype)
