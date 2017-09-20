@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-IBM Software Architect; Kubernetes member, k8s/sig-mesos leader, Mesos contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
+IBM Software Architect; Kubernetes Maintainer, kube-arbitrator and kube-mesos-framework owner, Mesos contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
 
 ## Experience
 
@@ -12,9 +12,10 @@ IBM Software Architect; Kubernetes member, k8s/sig-mesos leader, Mesos contribut
 
 __Open Source Developer of Spectrum Conductor for Container__
 
-Kubernetes Member: [several patches](http://t.cn/RMF2x2B); one major proposal:
+Kubernetes Maintainer: [several patches](http://t.cn/RMF2x2B):
 
-* Run multiple application in k8s [#36716](https://github.com/kubernetes/kubernetes/issues/36716) (proposing to be incubator, prototype at k82cn/kube-arbitrator)
+* Run multiple application in k8s [#36716](https://github.com/kubernetes/kubernetes/issues/36716) (kube-arbitrator incubator project)
+* [Contribution in upstream](https://groups.google.com/forum/#!topic/kubernetes-membership/EkxXeeLuV_w)
 
 Kube-mesos Maintainer: several proposals:
 
