@@ -1,31 +1,18 @@
 ---
 layout: default
 ---
-
-<div class="posts">
-  <ul>
-    {% for post in site.posts %}
-      <li style="margin:5px 5px 5px 5px; list-style-type:none; font-size: 16px">
-        <span style="color: #aaa; font-family: Monaco, monospace; font-size: 80%;display:-moz-inline-box;display:inline-block;">
-          {{ post.date | date_to_string }}
-        </span> &raquo;
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-<!--
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
--->
+<div class="home">
+	<section class="site-header">
+		<h1 class="smallcap"><a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+		{% include intro.html %}
+	</section>
+	<section>
+		<ul class="post-list">
+			{% for post in site.posts %}
+			<li>
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
 </div>
