@@ -41,3 +41,12 @@ The root cause is glusterfs can not use non-empty working directory; the solutio
  `working-directory` in `/etc/glusterfs/glusterd.vol`.
 
 
+## GlusterFS Errors
+
+```
+Readiness probe failed: ● glusterd.service - GlusterFS, a clustered file-system server
+   Loaded: loaded (/usr/lib/systemd/system/glusterd.service; enabled; vendor preset: disabled)
+   Active: inactive (dead)
+```
+
+Resolved by: `systemctl stop rpcbind.socket`
