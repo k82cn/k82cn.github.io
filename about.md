@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: post
 title: Klaus Ma
-permalink: /k82cn/
+permalink: /about/
 ---
 
 IBM Software Architect; Kubernetes Maintainer, kube-arbitrator and kube-mesos-framework owner, Mesos contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
