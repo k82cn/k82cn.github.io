@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: k8s
 title: Kuberentes中基于策略的资源分配
 categories: tech
 ---
