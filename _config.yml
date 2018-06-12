@@ -1,7 +1,7 @@
 # Jekyll configuration
 
 name: Klaus's blog
-description: The blog of Klaus Ma
+description: This's Klaus Ma's blog, he's Kubernetes Maintainer, co-leader of sig-scheduling; IBMer, ex-Baiduer :)
 
 # url is currently only used only for the RSS feed in feed.xml
 url: http://www.klaus1982.cn
