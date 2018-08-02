@@ -4,7 +4,7 @@ title: Klaus Ma
 permalink: /about/
 ---
 
-IBM Software Architect; Kubernetes Maintainer, kube-arbitrator and kube-mesos-framework owner, Mesos contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
+IBM Software Architect; Kubernetes Maintainer, Kubernetes SIG-Scheduling co-Leader, kube-arbitrator and kube-mesos-framework owner, Mesos contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
 
 ## Experience
 
@@ -65,11 +65,11 @@ __E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Github__:
 
 * Jilin University Master, Computer Science and technology 2005 – 2008
 
-Computer System Architecture Lib, major in Grid Computing (Globus, MPICH-G2); focus on “Virtual Job Model”, 3 papers published, 1 conference
+  Computer System Architecture Lib, major in Grid Computing (Globus, MPICH-G2); focus on “Virtual Job Model”, 3 papers published, 1 conference
 
 * JiLin University BS, Computer Science and technology 2001 – 2005
 
-Major in Computer Science and Technology; Scholarship every year
+  Major in Computer Science and Technology; Scholarship every year
 
 ## Presentation
 
