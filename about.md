@@ -4,11 +4,15 @@ title: Klaus Ma
 permalink: /about/
 ---
 
-IBM Software Architect; Kubernetes Maintainer, Kubernetes SIG-Scheduling co-Leader, kube-arbitrator and kube-mesos-framework owner, Mesos contributor. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu, then IBM; focus on resource management, resource scheduling in distributed system.
+Expert at Huawei; Kubernetes Maintainer, Kubernetes SIG-Scheduling co-Leader, kube-batch owner. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu/IBM, then Huawei; focus on resource management, resource scheduling in distributed system.
 
 ## Experience
 
-### IBM, Beijing, China (2015 ~ now)
+### Huawei, Beijing, China (2018 ~ now)
+
+TBD
+
+### IBM, Beijing, China (2015 ~ 2018)
 
 __Open Source Developer of Spectrum Conductor for Container__
 
