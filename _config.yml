@@ -1,7 +1,7 @@
 # Jekyll configuration
 
 name: Klaus's blog
-description: This's Klaus Ma's blog, he's Kubernetes Maintainer, co-leader of sig-scheduling; IBMer, ex-Baiduer :)
+description: This's Klaus Ma's blog, he's Kubernetes maintainer, co-leader of sig-scheduling; ex-IBMer, ex-Baiduer :)
 
 # url is currently only used only for the RSS feed in feed.xml
 url: http://www.klaus1982.cn
@@ -13,7 +13,7 @@ url: http://www.klaus1982.cn
 baseurl: /
 
 # These can be '' to hide the Github or Gitlab nav buttons
-github: 'k82cn/kubernetes'
+github: 'k82cn'
 gitlab: ''
 
 # Set this to your UA-# value, or '' to disable the block completely
