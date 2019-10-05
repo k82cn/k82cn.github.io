@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: post
 title: Klaus Ma
 permalink: /about/
 ---
 
-Expert at Huawei; Kubernetes Maintainer, Kubernetes SIG-Scheduling co-Leader, kube-batch owner. Jilin University master's degree, majoring in grid computing and distributed system. After graduation, he joined Baidu/IBM, then Huawei; focus on resource management, resource scheduling in distributed system.
+Expert at Huawei; Kubernetes Maintainer, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group Tech Lead, Volcano & kube-batch creator.
+Jilin University master's degree, majoring in grid computing and distributed system.
+After graduation, he joined Baidu/IBM, then Huawei; focus on resource management, resource scheduling in distributed system.
 
 ## Experience
 

@@ -1,40 +1,28 @@
-# Jekyll configuration
+title: "咖啡香"
+author: "Klaus Ma"
+description: "Klaus's own thoughts on Distributed Computing"
+permalink: pretty
+lang: "en"
 
-name: Klaus's blog
-description: This's Klaus Ma's blog, he's Kubernetes maintainer, co-leader of sig-scheduling; ex-IBMer, ex-Baiduer :)
+show_footer: false           # show the "previous" and "next" links at the end of each post
+dark_theme: false            # use the dark mode as default
+dark_header: true            # keep the header dark
+dark_footer: false           # keep the footer dark
+# style: minimal             # use a simpler style inspired by the minima theme
 
-# url is currently only used only for the RSS feed in feed.xml
-url: http://www.klaus1982.cn
+navigation:                  # site navigation in the header
+  - about.md
+  - Github: "http://github.com/k82cn"
 
-# baseurl will often be '', but for a project page on gh-pages, it needs to
-# be the project name.
-# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
-#     run it like so: jekyll serve --baseurl=''
-baseurl: /
+#icons:                      # icons in the header, see http://fontawesome.com/icons
+#  envelope: "mailto:niklasbuschmann@users.noreply.github.com"
+#  github: "https://github.com/niklasbuschmann/contrast"
+#  rss: "/contrast/feed.xml"
 
-# These can be '' to hide the Github or Gitlab nav buttons
-github: 'k82cn'
-gitlab: ''
+comments:                    # embed disqus or isso comments
+#  disqus: ""
+#  isso: ""
 
-# Set this to your UA-# value, or '' to disable the block completely
-gaaccount: ''
-
-# The 'comments' setting enables comments. You'll need to select either
-# disqus or isso below to choose a comment system. Individual posts can
-# override 'comments' to disable on a post-by-post basis.
-comments: true
-
-# Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
-isso: ''
-
-# Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
-disqus: ''
-
-permalink: /:year/:month/:title
-paginate: 3
-
-highlighter: rouge
-markdown: kramdown
-gems: ['jekyll-paginate']
-
-exclude: ['README.md', 'LICENSE']
+plugins:
+ - jekyll-feed
+ - jekyll-default-layout
