@@ -4,34 +4,28 @@ title: Klaus Ma
 permalink: /about/
 ---
 
-Expert at Huawei; Kubernetes Maintainer, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group Tech Lead, Volcano & kube-batch creator.
-Jilin University master's degree, majoring in grid computing and distributed system.
-After graduation, he joined Baidu/IBM, then Huawei; focus on resource management, resource scheduling in distributed system.
+Team leader, system architect, designer, software developer with 10+ years of experience across a variety of industries and technology bases, including cloud computing, machine learning, bigdata and financial services. 
+
+Founding Volcano & kube-batch, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group Tech Lead. Global Team Lead of IBM Spectrum Symphony CE & L3. Currently, Architect, R&D, Huawei  Technologies.
 
 ## Experience
 
 ### Huawei, Beijing, China (2018 ~ now)
 
-TBD
+Founding Volcano & kube-batch; architect of Batch Container Service of Huawei Cloud, lead ~10 size of team to build cloud service for batch workload, including AI, BigData, Gene and so on.
 
 ### IBM, Beijing, China (2015 ~ 2018)
 
-__Open Source Developer of Spectrum Conductor for Container__
+__Open Source Developer of Spectrum Conductor__
 
-Kubernetes Maintainer: [several patches](http://t.cn/RMF2x2B):
+Kubernetes:
 
-* Run multiple application in k8s [#36716](https://github.com/kubernetes/kubernetes/issues/36716) (kube-arbitrator incubator project)
-* [Contribution in upstream](https://groups.google.com/forum/#!topic/kubernetes-membership/EkxXeeLuV_w)
+* [Kubernetes Maintainer]( https://groups.google.com/forum/#!topic/kubernetes-membership/EkxXeeLuV_w )
+* [Kubernetes SIG-Scheduling co-leader]( https://groups.google.com/forum/#!msg/kubernetes-sig-scheduling/xS4RYbtUItE/3Wn0RwnvAAAJ )
+* [kube-arbitrator creator]( https://groups.google.com/forum/#!msg/kubernetes-dev/K3Jn3SjBPSc/7gZDCGluBQAJ )
+* kube-mesos maintainer
 
-Kube-mesos Maintainer: several proposals:
-
-* Integrate Namespace/Quota with CloudProviders [#31069]
-* Integrate kube-DNS with external DNS [#28453]
-* Make k8sm-scheduler using reserved resource firstly [#31068]
-* Kubernetes use revocable resources from Mesos [#19529]
-* Refactor k8sm to avoid re-ship binaries [k8sm#20] (on-going)
-
-Mesos Contributor: several patches and major proposals:
+Mesos Contributor, several patches and major proposals:
 
 * Reusable/Cacheable Offer [MESOS-4811]
 * Oversubscription for reservation [MESOS-4967] (with prototype)
@@ -48,15 +42,7 @@ Lead ~5 size of team on critical customer issues handling, by working with globa
 
 __Team Lead of Spectrum Symphony CE__
 
-Lead ~10 size of team on agile development for new requirements, by working with global Product manager, to meet business priorities in time; the major requirements includes:
-
-* SSM migration
-* DAG workload for Symphony (research)
-* Single SIM for Symphony (investigation)
-* Multiple Tasks in One Service Instance (MTS)
-* Service Affinity Group (SAG)
-* Recursive Workload
-* 20K cores per application (Multiple-SSM)
+Lead ~10 size of team on agile development for new requirements, by working with global Product manager, to meet business priorities in time.
 
 ### Baidu, Beijing, China (2008 ~ 2010)
 
@@ -79,7 +65,20 @@ __E-mail__: [klaus1982.cn@gmail.com](mailto:klaus1982.cn@gmail.com); __Github__:
 
 ## Presentation
 
-* KubeCon 2016: [Kubernetes on EGO -- Bringing Enterprise Resource Management and Scheduling to Kubernetes](http://sched.co/8K3n)
+* KubeCon 2019 NA: [Improving Performance of Deep Learning Workloads With Volcano](https://sched.co/UaZi)
+* KubeCon 2019 NA: [Batch Capability of Kubernetes Intro](https://sched.co/Uajv)
+* COSCon'19: [华为云原生之路：开源加速企业开放式创新](https://bbs.huaweicloud.com/blogs/127619)
+* ArchSummit 2019: [Volcano 在 Kubernetes 中运行高性能作业实践](https://archsummit.infoq.cn/2019/shenzhen/presentation/1817)
+* Huawei Connection 2019: [Volcano：基于云原生的高密计算解决方案](https://agenda.events.huawei.com/2019/cn/minisite/agenda.html#dayTab=day7&tagName={"language"%3A"Cn"}&seminarId=1743)
+* KubeCon 2019 China: [Volcano: Running AI/DL workload on Kubernetes ](https://sched.co/QXj2)
+* KubeCon 2019 China: [Intro + Deep Dive: SIG Scheduling](https://sched.co/O9pG)
+* KubeCon 2019 EU: [Intro: Kubernetes Batch Scheduling](https://sched.co/MPi7)
+* KubeCon 2018 NA: [Intro: Scheduling SIG](https://sched.co/HDr0)
+* KubeCon 2018 China: [Kube-Arbitrator: A Batch System of Kubernetes](https://sched.co/FuKC)
+* KubeCon 2018 China: [Intro: SIG Scheduling](https://sched.co/FuLN)
+* KubeCon 2018 China: [Deep Dive: Kubernetes Policy WG ](https://sched.co/FuLb)
+* KubeCon 2018 China: [Deep Dive: SIG Scheduling](https://sched.co/FuLj)
+* KubeCon 2016 NA: [Kubernetes on EGO -- Bringing Enterprise Resource Management and Scheduling to Kubernetes](http://sched.co/8K3n)
 * MesosCon 2016 Asia: [Kubernetes on Mesos: Not Just Another Mesos Framework](http://sched.co/8QFB)
 * GOPS 2016 Beijing: [Resource Management and Scheduler of PaaS](http://gops2016-beijing.eventdove.com/)
 * COSC 2016: [Kubernetes on Mesos: The Present and the Future](http://www.huodongxing.com/go/coscon2016)
