@@ -12,7 +12,7 @@ Founding Volcano & kube-batch, Kubernetes SIG-Scheduling co-Leader, CNCF Researc
 
 ### Huawei, Beijing, China (2018 ~ now)
 
-Founding Volcano & kube-batch; architect of Batch Container Service of Huawei Cloud, lead ~10 size of team to build cloud service for batch workload, including AI, BigData, Gene and so on.
+Founding [Volcano](http://github.com/volcano-sh/volcano) & [kube-batch](https://github.com/kubernetes-sigs/kube-batch); architect of Batch Container Service of Huawei Cloud, lead ~10 size of team to build cloud service for batch workload, including AI, BigData, Gene and so on.
 
 ### IBM, Beijing, China (2015 ~ 2018)
 
