@@ -6,7 +6,7 @@ permalink: /about/
 
 Team leader, system architect, designer, software developer with 10+ years of experience across a variety of industries and technology bases, including cloud computing, machine learning, bigdata and financial services. 
 
-Founding Volcano & kube-batch, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group Tech Lead. Global Team Lead of IBM Spectrum Symphony CE & L3. Currently, Architect, R&D, Huawei  Technologies.
+Founding Volcano & kube-batch, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group & SIG-Runtime Tech Lead. Global Team Lead of IBM Spectrum Symphony CE & L3. Currently, Architect, R&D, Huawei  Technologies.
 
 ## Experience
 
