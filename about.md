@@ -94,7 +94,7 @@ __Authors__: Zhaohui Ding, Xiaohui Wei, Yuan Luo, Da Ma, Peter Arzberger, Wilfre
 
 As more and more life science researchers start to take advantages of grid technologies in their work, the demand increases for a robust yet easy to use metascheduler or resource broker. In this paper, we have extended the metascheduler CSF4 by providing a Virtual Job Model (VJM) to synchronize the resource coallocation for cross-domain parallel jobs. The VJM eliminates dead-locks and improves resource usage for multi-cluster parallel applications compiled with MPICH-G2. Taking advantage of the extensible scheduler plug-in model of CSF4, one may develop customized metascheduling policies for life sciences applications.  As an example, an array-job scheduler plug-in is developed for pleasantly parallel applications such as AutoDock and Blast. The performance of the VJM is evaluated through experiments with mpiBLAST-g2 using a Gfarm data grid testbed. Furthermore, a CSF4 portlet has been released to provide a graphical user interface for transparent grid access, with the use of Gfarm for data staging and simplified data management.  The platform is open source at sourceforge.net/projects/gcsf/ and has been deployed in life science gateways by projects such as My WorkSphere, and PRAGMA Biosciences Portal. The VJM enables the development of support for more sophisticated workflows and metascheduling policies in the near future.
 
-### [__A Virtual Job Model to Support Cross-Domain Synchronized Resource Allocation__](http://www.cs.indiana.edu/~yuanluo/publications/VJM.pdf)
+### [__A Virtual Job Model to Support Cross-Domain Synchronized Resource Allocation__](https://pdfs.semanticscholar.org/e992/2ac732d62b3b007414a39d7070530f571cd1.pdf)
 
 Journal of Software
 
