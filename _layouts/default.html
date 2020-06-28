@@ -8,7 +8,7 @@
 <meta name="author" content="{{ page.author | default: site.author | escape }}">
 <meta name="generator" content="Jekyll v{{ jekyll.version }}">
 <meta name="baidu-site-verification" content="uLIENn1o3Z" />
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
 <link rel="stylesheet" href="{{ site.style | default: "theme" | prepend: "/assets/css/" | append: ".css" | relative_url }}">
@@ -20,8 +20,6 @@
 {% endif %}
 {% if site.comments.disqus %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso %}<script data-isso="http://{{ site.comments.isso }}" src="//{{ site.comments.isso }}/js/embed.min.js"></script>{% endif %}
-
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <header>
   <h2><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h2>
