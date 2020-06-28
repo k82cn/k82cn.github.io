@@ -20,7 +20,7 @@ navigation:                  # site navigation in the header
 #  rss: "/contrast/feed.xml"
 
 comments:                    # embed disqus or isso comments
-#  disqus: ""
+  disqus: "k82cn"
 #  isso: ""
 
 plugins:
