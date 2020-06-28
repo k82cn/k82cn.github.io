@@ -15,23 +15,6 @@ layout: default
   <hr><div id="disqus_thread"></div>
   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   {% endif %}
-
-  <div id="gitalk-container"></div>
-
-  <script type="javascript">
-    const gitalk = new Gitalk({
-      clientID: '8adae03c4daa3cd47137',
-      clientSecret: '5de41292a2e93988e006b1ac707e93cb3ff1f3f1',
-      repo: 'k82cn/k82cn.github.io',
-      owner: 'k82cn',
-      admin: ['k82cn'],
-      id: location.pathname,      // Ensure uniqueness and length less than 50
-      distractionFreeMode: false  // Facebook-like distraction free mode
-    })
-
-    gitalk.render('gitalk-container')
-  </script>
-
 </article>
 
 {% if site.show_footer and page.previous.url or page.next.url %}
