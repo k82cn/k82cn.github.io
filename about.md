@@ -6,11 +6,15 @@ permalink: /about/
 
 Team leader, system architect, designer, software developer with 10+ years of experience across a variety of industries and technology bases, including cloud computing, machine learning, bigdata and financial services. 
 
-Founding Volcano & kube-batch, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group & SIG-Runtime Tech Lead. Global Team Lead of IBM Spectrum Symphony CE & L3. Currently, Architect, R&D, Huawei  Technologies.
+Founding Volcano & kube-batch, Kubernetes SIG-Scheduling co-Leader, CNCF Research User Group & SIG-Runtime Tech Lead. Global Team Lead of IBM Spectrum Symphony CE & L3. Currently, Architect, R&D, Nvidia Technologies.
 
 ## Experience
 
-### Huawei, Beijing, China (2018 ~ now)
+### Nvidia, Beijing, China (2022 ~ now)
+
+Engineer & Architect of DPU Cloud Management
+
+### Huawei, Beijing, China (2018 ~ 2022)
 
 Founding [Volcano](http://github.com/volcano-sh/volcano) & [kube-batch](https://github.com/kubernetes-sigs/kube-batch); architect of Batch Container Service of Huawei Cloud, lead ~10 size of team to build cloud service for batch workload, including AI, BigData, Gene and so on.
 
