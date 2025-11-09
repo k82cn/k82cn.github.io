@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: tech
-title: Flame (3)2&#58; 使用Flame构建页面抓取工具
+title: Flame (3)&#58; 使用Flame构建页面抓取工具
 ---
 
 随着智能体技术的不断发展，越来越多的企业和用户投入资源研发和部署智能体，以提升业务效率。
