@@ -160,5 +160,5 @@ Flame v0.5 提供的 Python API 极大地简化了开发流程，并能够与第
 
 ## 引用
 
-* Flame: http://github.com/xflops/flame
-* Markitdown: https://github.com/microsoft/markitdown
+* Flame: [http://github.com/xflops/flame](http://github.com/xflops/flame)
+* Markitdown: [https://github.com/microsoft/markitdown](https://github.com/microsoft/markitdown)
